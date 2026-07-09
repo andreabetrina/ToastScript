@@ -1,0 +1,98 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 15px 0;
+  /* background is overridden by the glass-panel class to be translucent white */
+  border-bottom: 2px solid var(--tm-burgundy); /* Elegant Burgundy accent line */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--tm-blue); /* Navy Blue for 'Toast' */
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+
+.logo span {
+  color: var(--tm-burgundy); /* Burgundy for 'Script' */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-secondary); /* Dark text for readability */
+  padding: 6px 0;
+  transition: var(--transition);
+}
+
+.nav-links li:hover {
+  color: var(--tm-burgundy); /* Hover is Burgundy */
+}
+
+/* Hover Accent Line */
+.nav-links li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--tm-burgundy); /* Underline is Burgundy */
+  transition: var(--transition);
+}
+
+.nav-links li:hover::after,
+.nav-links li.active::after {
+  width: 100%;
+}
+
+.nav-links li.active {
+  color: var(--tm-burgundy);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 0;
+  }
+  
+  .navbar-container {
+    width: 92%;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links li {
+    font-size: 14px;
+  }
+}
